@@ -1,0 +1,1 @@
+# Buffstreams Plus Inspired (Next.js 14)\n\nAPI: https://lotusgamehd.xyz/api-event.php\n\nSetup:\n````bash\nnpm i\nnpm run dev\n````\n

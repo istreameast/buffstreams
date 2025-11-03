@@ -1,0 +1,1 @@
+export const LOTUS_ENDPOINT='https://lotusgamehd.xyz/api-event.php';export async function fetchEvents(){const res=await fetch(LOTUS_ENDPOINT,{cache:'no-store'});if(!res.ok)throw new Error('API unreachable');return res.json();}

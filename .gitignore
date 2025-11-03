@@ -1,0 +1,36 @@
+# === Node & Next.js ===
+node_modules/
+.next/
+out/
+dist/
+build/
+.cache/
+*.log
+*.tmp
+
+# === Env & Config ===
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === VSCode & IDE ===
+.vscode/
+.idea/
+*.swp
+
+# === Generated assets ===
+coverage/
+*.zip
+public/*.zip
+
+# === Locks & reports ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

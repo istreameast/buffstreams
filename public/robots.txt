@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap link
+Sitemap: https://buffstreams.direct/sitemap.xml
+Host: https://buffstreams.direct
