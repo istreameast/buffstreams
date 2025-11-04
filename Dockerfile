@@ -1,33 +1,30 @@
-# Use official Node image
+# ---- BUILD STAGE ----
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copy package files and install deps
 COPY package*.json ./
 RUN npm install
 
-# Copy all project files
+# Copy source code
 COPY . .
 
-# Build Next.js app
+# Build Next.js for production
 RUN npm run build
 
-# Production image
+# ---- RUN STAGE ----
 FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Copy built files from builder stage
-COPY --from=builder /app/.next ./.next
+# Copy production files from builder
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/package*.json ./
 
-# Install only production dependencies
 RUN npm install --omit=dev
 
 EXPOSE 3000
-
-# Start Next.js server
 CMD ["npm", "run", "start"]
